@@ -1,39 +1,37 @@
 # WasteClassifier
 
-**WasteClassifier**, evsel ve geri dönüştürülebilir atıkları görüntü işleme yoluyla ayırt eden bir sınıflandırma modelidir. Bu proje, çevre bilincini artırmak ve atık yönetimini otomatikleştirmek amacıyla geliştirilmiştir.
+**WasteClassifier** is a classification model that distinguishes between household and recyclable waste using image processing. This project was developed to promote environmental awareness and automate waste management.
 
-Günümüzde artan tüketim alışkanlıklarıyla birlikte atık miktarı da ciddi oranda artmıştır. Atıkların doğru şekilde ayrıştırılması, geri dönüşümün verimli çalışabilmesi açısından kritik öneme sahiptir. Biz de bu probleme yönelik bir çözüm geliştirdik: Görüntülerden atık türünü sınıflandırabilen bir yapay zeka modeli.
-
----
-
-## 🎯 Projenin Amacı
-
-- Atıkların **otomatik olarak sınıflandırılması** ile geri dönüşüm sistemlerine destek sağlamak  
-- **Gerçek dünya koşullarına uygun** örneklerle eğitilmiş bir model geliştirmek  
-- Veri artırma ve transfer öğrenme tekniklerini kullanarak **yüksek doğruluk oranına** ulaşmak  
+With increasing consumption habits today, the amount of waste has also risen significantly. Proper separation of waste is critical for effective recycling. We developed a solution to this problem: an AI model that can classify waste types from images.
 
 ---
 
-## 📁 Veri Kümesi
+## 🎯 Project Goals
 
-Veri kümesi `images/` klasöründe yer almaktadır.
-
-
----
-
-## 🧠 Yöntem
-
-- **Model:** MobileNetV3 Small (transfer learning ile)
-- **Veri Artırma:** Renk bozulması, döndürme, ölçekleme, bulanıklık
-- **Dönüşümler:** Normalize, Resize (256x256)
-- **Performans Ölçütleri:** Accuracy, Confusion Matrix, Classification Report
-
-Eğitim verisi %60, doğrulama %20, test %20 oranında bölünmüştür. Eğitim sürecinde hem eğitim hem de doğrulama verileri üzerinde kayıplar ve doğruluklar izlenmiştir.
-
+- Support recycling systems through the **automatic classification of waste**  
+- Develop a model trained with **real-world examples**  
+- Achieve **high accuracy** using data augmentation and transfer learning techniques  
 
 ---
 
-## 🔧 Gereksinimler
+## 📁 Dataset
+
+The dataset is located in the `images/` directory.
+
+---
+
+## 🧠 Method
+
+- **Model:** MobileNetV3 Small (via transfer learning)  
+- **Data Augmentation:** Color distortion, rotation, scaling, blurring  
+- **Transformations:** Normalize, Resize (256x256)  
+- **Evaluation Metrics:** Accuracy, Confusion Matrix, Classification Report  
+
+The data is split into 60% training, 20% validation, and 20% testing. During training, both training and validation losses and accuracies are monitored.
+
+---
+
+## 🔧 Requirements
 
 ```bash
 pip install torch torchvision matplotlib scikit-learn pillow
@@ -41,16 +39,16 @@ pip install torch torchvision matplotlib scikit-learn pillow
 
 ---
 
-## 🚀 Kullanım
+## 🚀 Usage
 
 ```bash
 git clone https://github.com/kullaniciadi/WasteClassifier.git
 cd WasteClassifier
 
-jupyter notebook "recyclable and household waste classification.ipynb"
+jupyter notebook ‘recyclable and household waste classification.ipynb’
 ```
 
-Notebook içindeki adımları takip ederek veriyi yükleyebilir, modeli eğitebilir ve test edebilirsiniz.
+You can load the data, train the model, and test it by following the steps in the notebook.
 
 
 ---
